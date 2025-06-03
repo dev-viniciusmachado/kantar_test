@@ -30,5 +30,9 @@ public class BasketConfiguration : IEntityTypeConfiguration<Basket>
             .HasColumnType("DATETIME")
             .IsRequired(false);
         
+        builder.Property(x => x.CanceledAt)
+            .HasColumnType("DATETIME")
+            .IsRequired(false);
+        
     }
 }

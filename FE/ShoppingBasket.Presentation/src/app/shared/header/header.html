@@ -1,0 +1,15 @@
+<mat-toolbar class="modern-toolbar">
+  <span class="logo">Store</span>
+  <span class="nav">
+    <button mat-button [routerLink]="'/'">Store</button>
+    <button id="btnHistory" mat-button [routerLink]="'/history'" *ngIf="isAuthenticated">History</button>
+  </span>
+  <span class="icons">
+    <button (click)="toggleBasket()" mat-icon-button aria-label="Cart" [matBadge]="numberOfItemsInBasket" >
+      <mat-icon>shopping_cart</mat-icon>
+    </button>
+    <button mat-icon-button aria-label="User">
+      <mat-icon [routerLink]="'/user'">account_circle</mat-icon>
+    </button>
+  </span>
+</mat-toolbar>

@@ -1,0 +1,17 @@
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/bin/Debug/net9.0/ShoppingBasket.Infrastructure.deps.json
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/bin/Debug/net9.0/ShoppingBasket.Infrastructure.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/bin/Debug/net9.0/ShoppingBasket.Infrastructure.pdb
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/bin/Debug/net9.0/ShoppingBasket.Application.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/bin/Debug/net9.0/ShoppingBasket.Domain.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/bin/Debug/net9.0/ShoppingBasket.Application.pdb
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/bin/Debug/net9.0/ShoppingBasket.Domain.pdb
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ShoppingBasket.Infrastructure.csproj.AssemblyReference.cache
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ShoppingBasket.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ShoppingBasket.Infrastructure.AssemblyInfoInputs.cache
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ShoppingBasket.Infrastructure.AssemblyInfo.cs
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ShoppingBasket.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/Shopping.930E6921.Up2Date
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ShoppingBasket.Infrastructure.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/refint/ShoppingBasket.Infrastructure.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ShoppingBasket.Infrastructure.pdb
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/Debug/net9.0/ref/ShoppingBasket.Infrastructure.dll

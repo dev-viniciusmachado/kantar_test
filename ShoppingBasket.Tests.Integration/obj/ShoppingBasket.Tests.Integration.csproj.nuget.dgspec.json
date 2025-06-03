@@ -1,0 +1,535 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Tests.Integration/ShoppingBasket.Tests.Integration.csproj": {}
+  },
+  "projects": {
+    "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.API/ShoppingBasket.API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.API/ShoppingBasket.API.csproj",
+        "projectName": "ShoppingBasket.API",
+        "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.API/ShoppingBasket.API.csproj",
+        "packagesPath": "/Users/viniciusmachado/.nuget/packages/",
+        "outputPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.API/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/viniciusmachado/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/viniciusmachado/Documents/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kenbi-artifacts-567677647219.d.codeartifact.eu-central-1.amazonaws.com/nuget/nuget-store/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/ShoppingBasket.Infrastructure.csproj": {
+                "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/ShoppingBasket.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Versioning": {
+              "target": "Package",
+              "version": "[5.1.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "Microsoft.OpenApi": {
+              "target": "Package",
+              "version": "[1.6.23, )"
+            },
+            "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "OpenTelemetry.Extensions.Hosting": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "OpenTelemetry.Instrumentation.AspNetCore": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "OpenTelemetry.Instrumentation.Http": {
+              "target": "Package",
+              "version": "(, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[8.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Application/ShoppingBasket.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Application/ShoppingBasket.Application.csproj",
+        "projectName": "ShoppingBasket.Application",
+        "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Application/ShoppingBasket.Application.csproj",
+        "packagesPath": "/Users/viniciusmachado/.nuget/packages/",
+        "outputPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/viniciusmachado/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/viniciusmachado/Documents/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kenbi-artifacts-567677647219.d.codeartifact.eu-central-1.amazonaws.com/nuget/nuget-store/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/ShoppingBasket.Domain.csproj": {
+                "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/ShoppingBasket.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.5.0, )"
+            },
+            "MediatR.Contracts": {
+              "target": "Package",
+              "version": "[2.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/ShoppingBasket.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/ShoppingBasket.Domain.csproj",
+        "projectName": "ShoppingBasket.Domain",
+        "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/ShoppingBasket.Domain.csproj",
+        "packagesPath": "/Users/viniciusmachado/.nuget/packages/",
+        "outputPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/viniciusmachado/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/viniciusmachado/Documents/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kenbi-artifacts-567677647219.d.codeartifact.eu-central-1.amazonaws.com/nuget/nuget-store/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/ShoppingBasket.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/ShoppingBasket.Infrastructure.csproj",
+        "projectName": "ShoppingBasket.Infrastructure",
+        "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/ShoppingBasket.Infrastructure.csproj",
+        "packagesPath": "/Users/viniciusmachado/.nuget/packages/",
+        "outputPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/viniciusmachado/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/viniciusmachado/Documents/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kenbi-artifacts-567677647219.d.codeartifact.eu-central-1.amazonaws.com/nuget/nuget-store/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Application/ShoppingBasket.Application.csproj": {
+                "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Application/ShoppingBasket.Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.Extensions.Hosting.Abstractions": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql.Design": {
+              "target": "Package",
+              "version": "[1.1.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Tests.Integration/ShoppingBasket.Tests.Integration.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Tests.Integration/ShoppingBasket.Tests.Integration.csproj",
+        "projectName": "ShoppingBasket.Tests.Integration",
+        "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Tests.Integration/ShoppingBasket.Tests.Integration.csproj",
+        "packagesPath": "/Users/viniciusmachado/.nuget/packages/",
+        "outputPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Tests.Integration/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/viniciusmachado/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/Users/viniciusmachado/Documents/nuget": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://kenbi-artifacts-567677647219.d.codeartifact.eu-central-1.amazonaws.com/nuget/nuget-store/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.API/ShoppingBasket.API.csproj": {
+                "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.API/ShoppingBasket.API.csproj"
+              },
+              "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/ShoppingBasket.Infrastructure.csproj": {
+                "projectPath": "/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Infrastructure/ShoppingBasket.Infrastructure.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[8.3.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.16, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.6.0, )"
+            },
+            "Testcontainers": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "Testcontainers.MySql": {
+              "target": "Package",
+              "version": "[4.4.0, )"
+            },
+            "coverlet.collector": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.2, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.4.5, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[8.0.16, 8.0.16]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.300/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

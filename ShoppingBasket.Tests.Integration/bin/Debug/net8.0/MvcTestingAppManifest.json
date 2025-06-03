@@ -1,0 +1,5 @@
+{
+  "ShoppingBasket.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/viniciusmachado\/Documents\/kantar_test\/ShoppingBasket.Application",
+  "ShoppingBasket.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/viniciusmachado\/Documents\/kantar_test\/ShoppingBasket.Domain",
+  "ShoppingBasket.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null": "\/Users\/viniciusmachado\/Documents\/kantar_test\/ShoppingBasket.Infrastructure"
+}

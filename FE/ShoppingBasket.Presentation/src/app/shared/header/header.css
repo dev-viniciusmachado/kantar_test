@@ -1,0 +1,40 @@
+.modern-toolbar {
+    background: #4a90e2;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .nav button {
+    color: #fff;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .nav button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+  }
+
+  .icons button {
+    color: #fff;
+    margin-left: 0.5rem;
+  }
+
+  .example-container {
+    width: 400px;
+    height: 200px;
+    margin: 10px;
+    border: 1px solid #555;
+  }
+  

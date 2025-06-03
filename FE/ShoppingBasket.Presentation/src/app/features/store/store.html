@@ -1,0 +1,25 @@
+<div class="cards-container">
+    <div class="card" *ngFor="let product of products">
+      <img [src]="product.imagePath" [alt]="product.name" class="card-image" />
+      <div class="card-content">
+        <mat-grid-list cols="2" rowHeight="2:1" gutterSize="8px">
+            <mat-grid-tile>
+              <h3>{{ product.name }}</h3>
+            </mat-grid-tile>
+            <mat-grid-tile style="text-align: right;">
+              <p>R$ {{ product.price.toFixed(2) }}<p>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <mat-grid-list cols="2" rowHeight="2:1" gutterSize="8px">
+            <mat-grid-tile>
+              <input class="numberInput" matInput type="number" min="1" [(ngModel)]="quantities[product.id]" />
+            </mat-grid-tile>
+            <mat-grid-tile style="text-align: right;">
+                <button mat-button class="button" (click)="addToBasket(product)">Add</button>    
+            </mat-grid-tile>
+          </mat-grid-list>
+         
+      </div>
+    </div>
+  </div>
+

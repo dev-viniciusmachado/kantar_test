@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using ShoppingBasket.Aplication.Features.Baskets.CancelBasket;
 using ShoppingBasket.Aplication.Features.Baskets.CloseBasket;
 using ShoppingBasket.Aplication.Features.Baskets.CreateBasket;
 using ShoppingBasket.Aplication.Features.Baskets.CreateItem;
@@ -7,7 +8,7 @@ using ShoppingBasket.Aplication.Features.Baskets.DeleteItem;
 using ShoppingBasket.Aplication.Features.Baskets.GetBasketByBasketId;
 using ShoppingBasket.Aplication.Features.Baskets.GetClosedBasketsByCostumerId;
 using ShoppingBasket.Aplication.Features.Baskets.GetOpenBasketByCustomerId;
-using ShoppingBasket.Aplication.Features.Discounts;
+using ISession = ShoppingBasket.Domain.Auth.ISession;
 
 namespace ShoppingBasket.API.Endpoints;
 
@@ -15,16 +16,17 @@ public class BasketEndpoints :IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("api/baskets")
+        var group = app.MapGroup("api/v1/baskets")
             .WithTags("baskets");
 
-        group.MapPost("/", async (IMediator mediator, [AsParameters] CreateBasketCommand command) =>
+        group.MapPost("/", async (IMediator mediator, ISession session, [FromBody] CreateBasketCommand command) =>
         {
-            if(command.CustomerId is null && command.GuestId is null)
+   
+            if(session.UserId is null && command.GuestId is null)
             {
                 return Results.BadRequest("Either UserId or BasketId must be provided.");
             }
-            var basketId = await mediator.Send(command);
+            var basketId = await mediator.Send(command with{CustomerId = session.UserId});
             var response = await mediator.Send(new GetBasketByBasketIdRequest(basketId));
             return Results.Ok(response);
         });
@@ -42,9 +44,9 @@ public class BasketEndpoints :IEndpoint
             return Results.Ok(response);
         });
         
-        group.MapDelete("/{basketId}/product/{productId}", async (IMediator mediator, Guid basketId, Guid productId) =>
+        group.MapDelete("/{basketId}/product/{productId}", async (IMediator mediator, Guid basketId, Guid productId, [FromQuery]Guid? discountId = null) =>
         {
-            await mediator.Send(new DeleteItemCommand(basketId, productId));
+            await mediator.Send(new DeleteItemCommand(basketId, productId,discountId));
             var response = await mediator.Send(new GetBasketByBasketIdRequest(basketId));
             return Results.Ok(response);
         });
@@ -55,16 +57,32 @@ public class BasketEndpoints :IEndpoint
             return Results.NoContent();
         });
         
-        group.MapGet("/customer/{customerId}", async (IMediator mediator, Guid customerId) =>
+        group.MapPatch("/{basketId}/cancel", async (IMediator mediator, Guid basketId) =>
         {
-            var response = await mediator.Send(new GetOpenBasketByCustomerIdRequest(customerId));
+            await mediator.Send(new CancelBasketCommand(basketId));
+            return Results.NoContent();
+        });
+
+        group.MapGet("/customer/current", async (IMediator mediator, ISession session) =>
+        {
+            if (session.UserId is null)
+            {
+                return Results.BadRequest("UserId must be provided.");
+            }
+
+            var response = await mediator.Send(new GetOpenBasketByCustomerIdRequest(session.UserId.Value));
             return Results.Ok(response);
         });
-        
-        group.MapGet("/customer/{customerId}/history", async (IMediator mediator, Guid customerId, 
-            [AsParameters]GetClosedBasketsByCustomerIdRequest request) =>
+
+        group.MapGet("/customer/history", async (IMediator mediator, ISession session,
+            [AsParameters] GetClosedBasketsByCustomerIdRequest request) =>
         {
-            var response = await mediator.Send(request with { CustomerId = customerId });
+            if (session.UserId is null)
+            {
+                return Results.BadRequest("UserId must be provided.");
+            }
+
+            var response = await mediator.Send(request with { CustomerId = session.UserId.Value });
             return Results.Ok(response);
         });
     }

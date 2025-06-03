@@ -1,0 +1,30 @@
+.container{
+    background-color: white;
+    height: 95%;
+}
+
+.center {
+    text-align: center;
+}
+.basket-image{
+    width: 30px;
+    height:  30px;
+    padding-right: 10px;
+}
+
+.promotion {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1.5px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    /* max-width: 297px; */
+    font-size: 9px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+
+  .right-text {
+    text-align: right;
+    padding-left: 10px;
+  }

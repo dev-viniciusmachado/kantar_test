@@ -1,0 +1,60 @@
+<div class="container">
+    <h3 class="center">Your Cart ({{numberOfItemsInBasket}} items)</h3>
+    <table mat-table [dataSource]="basket.items" class="mat-elevation-z8" matSort>
+        <ng-container matColumnDef="image">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> 
+                <img [src]="element.product.imagePath" [alt]="element.product.name" class="basket-image" />
+            </td>
+          </ng-container>
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Product</th>
+            <td mat-cell *matCellDef="let element"> 
+                {{element.product.name}} 
+                <div *ngIf="element.discountApplayed" class="promotion">{{element.discountApplayed ? '(' + element.discountApplayed.rate + ')' : ''}}</div>
+                
+            </td>
+            <td mat-cell *matCellDef="let element"> 
+                {{element.product.name}} 
+            </td>
+          </ng-container>
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef>Qtd.</th>
+            <td mat-cell *matCellDef="let element"> {{element.quantity}} </td>
+          </ng-container>
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let element"> {{element.totalPriceWithDiscount| number:'1.2-2'}}€
+
+                <mat-icon style="color: red;"(click)="removeProduct(element.product,element.discountApplayed)">cancel</mat-icon>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-grid-list cols="2" rowHeight="2:1" gutterSize="8px">
+        <mat-grid-tile class="right-text">
+          <h3 style="width: 100%;">Total:</h3>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <p>{{basket.totalPriceWithDiscount}}€<p>
+        </mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="2" rowHeight="10:2" gutterSize="8px">
+      <mat-grid-tile class="right-text">
+        <h3 style="width: 100%;">Saved:</h3>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <p>{{basket.totalPrice - basket.totalPriceWithDiscount| number:'1.2-2'}}€<p>
+            
+      </mat-grid-tile>
+    </mat-grid-list>
+      <mat-grid-list cols="2" rowHeight="5:2" gutterSize="8px">
+        <mat-grid-tile class="right-text">
+            <button mat-button class="secondary" (click)="cancel()">Cancel</button> 
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <button matButton="filled" class="button" (click)="checkOut()">Check Out</button>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>

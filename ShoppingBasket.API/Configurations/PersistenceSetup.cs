@@ -9,18 +9,20 @@ public static class PersistenceSetup
 {
     public static IServiceCollection AddPersistenceSetup(this IServiceCollection services, IConfiguration configuration)
     {
-        /*services.AddScoped<ISession, Session>();*/
-        
-        services.AddDbContextPool<ApplicationDbContext>(options =>
+        if (configuration.GetConnectionString("SBDb") != null)
         {
-            options.UseMySql(configuration.GetConnectionString("SBDb"),
-                ServerVersion.AutoDetect(configuration.GetConnectionString("SBDb")),
-                mySqlOptions => mySqlOptions.EnableRetryOnFailure());
-        });
-        services.AddHostedService<ApplicationDbInitializer>();
-        services.AddHostedService<ApplicationDbSeed>();
+            services.AddDbContextPool<ApplicationDbContext>(options =>
+            {
+                options.UseMySql(configuration.GetConnectionString("SBDb"),
+                    ServerVersion.AutoDetect(configuration.GetConnectionString("SBDb")),
+                    mySqlOptions => mySqlOptions.EnableRetryOnFailure());
+            });
+            services.AddHostedService<ApplicationDbInitializer>();
+            services.AddHostedService<ApplicationDbSeed>();
+        }
+
         services.AddScoped<IContext, ApplicationDbContext>();
-        
+
         services.AddMemoryCache();
         services.AddSingleton<ICacheService, CacheService>();
         return services;

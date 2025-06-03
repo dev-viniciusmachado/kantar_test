@@ -20,6 +20,6 @@ public record BasketResponse(
             entity.TotalPriceWithDiscount,
             entity.CreatedAt,
             entity.ClosedAt,
-            BasketItemResponse.MapToResponse(entity.Items));
+            BasketItemResponse.MapToResponse(entity.Items.OrderBy(o => o.Product.Name)));
     }
 }

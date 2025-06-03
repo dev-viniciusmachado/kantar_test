@@ -42,9 +42,12 @@ public class CreateItemHandler(
         }
 
         var discount = await context.Discounts
-            .FirstOrDefaultAsync(w => w.Active && w.ProductConditionalId.Equals(request.ProductId));
+            .FirstOrDefaultAsync(w => w.Active && 
+                                      (w.ProductConditionalId == request.ProductId) ||
+                                      (w.ProductId == request.ProductId)
+                                      );
         
-        List<BasketItem> itemsToAdd = new List<BasketItem>();
+        var itemsToAdd = new List<BasketItem>();
         for(var i = 0; i < request.Quantity; i++)
         {
             itemsToAdd.Add(basket.AddProduct(product, discountPolicies, discount));

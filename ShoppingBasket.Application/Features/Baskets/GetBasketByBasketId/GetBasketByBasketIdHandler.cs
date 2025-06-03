@@ -16,14 +16,22 @@ public class GetBasketByBasketIdHandler(
         return await cacheService.GetAsync("basket", request.BasketId.ToString(), async () =>
         {
             logger.LogInformation("Fetching basket {basketId} from the database", request.BasketId);
-            return await context.Baskets
+            var basket = await context.Baskets
                 .Where(w => w.Id == request.BasketId)
                 .Include(b => b.Items)
                 .ThenInclude(item => item.Product)
                 .Include(b => b.Items)
                 .ThenInclude(item => item.Discount)
                 .Select(basket => BasketResponse.MapToResponse(basket))
-                .FirstAsync(cancellationToken);
+                .FirstOrDefaultAsync(cancellationToken);
+            
+            if (basket is null)
+            {
+                logger.LogWarning("Basket with ID {BasketId} not found", request.BasketId);
+                throw new KeyNotFoundException($"Basket with ID {request.BasketId} not found");
+            }
+
+            return basket;
         }, TimeExpiration.OneHour, cancellationToken);
     }
 }

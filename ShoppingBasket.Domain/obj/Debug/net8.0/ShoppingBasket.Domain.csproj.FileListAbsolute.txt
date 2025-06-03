@@ -1,0 +1,12 @@
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/bin/Debug/net8.0/ShoppingBasket.Domain.deps.json
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/bin/Debug/net8.0/ShoppingBasket.Domain.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/bin/Debug/net8.0/ShoppingBasket.Domain.pdb
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ShoppingBasket.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ShoppingBasket.Domain.AssemblyInfoInputs.cache
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ShoppingBasket.Domain.AssemblyInfo.cs
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ShoppingBasket.Domain.csproj.CoreCompileInputs.cache
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ShoppingBasket.Domain.sourcelink.json
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ShoppingBasket.Domain.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/refint/ShoppingBasket.Domain.dll
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ShoppingBasket.Domain.pdb
+/Users/viniciusmachado/Documents/kantar_test/ShoppingBasket.Domain/obj/Debug/net8.0/ref/ShoppingBasket.Domain.dll

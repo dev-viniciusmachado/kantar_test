@@ -11,6 +11,10 @@ public class GetClosedBasketsByCustomerIdHandler(ILogger<GetClosedBasketsByCusto
     {
 
         var query = context.Baskets
+            .Include(i => i.Items)
+            .ThenInclude(p => p.Product)
+            .Include(i => i.Items)
+            .ThenInclude(d => d.Discount)
             .Where(b => b.CustomerId == request.CustomerId && b.ClosedAt != null);
 
         var totalCount = query.Count();
@@ -29,17 +33,18 @@ public class GetClosedBasketsByCustomerIdHandler(ILogger<GetClosedBasketsByCusto
             _ => query
         };
 
+        var page = request.Page < 1 ? 1 : request.Page;
         var baskets = await query
-            .Skip((request.Page - 1) * request.PageSize)
+            .Skip((page - 1) * request.PageSize)
             .Take(request.PageSize)
-            .Select(b => BasketResponse.MapToResponse(b))
             .ToListAsync();
 
+        var response = baskets.Select(b => BasketResponse.MapToResponse(b)).ToList();
         return new PagedBasketResponse
         {
-            Baskets = baskets,
+            Baskets = response,
             TotalCount = totalCount,
-            PageNumber = request.Page,
+            PageNumber = request.Page-1,
             PageSize = request.PageSize
         };
     }

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using ShoppingBasket.Aplication.Features.Discounts;
 using ShoppingBasket.Domain.Entities;
 

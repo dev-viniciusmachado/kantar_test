@@ -5,26 +5,33 @@ namespace ShoppingBasket.Domain.Entities;
 
 public class Basket : Entity
 {
-    public IReadOnlyCollection<BasketItem> Items => _items.AsReadOnly();   
+    public IReadOnlyCollection<BasketItem> Items => _items.AsReadOnly();
     private List<BasketItem> _items = new List<BasketItem>();
     public Guid? CustomerId { get; private set; }
     public Guid? GuestId { get; private set; }
     public DateTime CreatedAt { get; private set; }
     public DateTime? ClosedAt { get; private set; }
-    
-    public Guid OwnerId => CustomerId ?? GuestId ?? throw new InvalidOperationException("Basket must have an owner (CustomerId or GuestId).");
+    public DateTime? CanceledAt { get; private set; }
 
-    public decimal TotalPrice=>                                                      
-        Math.Round(Items.Sum(item => item.Product.Price.Amount), 2, MidpointRounding.AwayFromZero); 
+    public Guid OwnerId => CustomerId ??
+                           GuestId ?? throw new InvalidOperationException(
+                               "Basket must have an owner (CustomerId or GuestId).");
+
+    public decimal TotalPrice =>
+        Math.Round(Items.Sum(item => item.Product.Price.Amount), 2, MidpointRounding.AwayFromZero);
+
     public decimal TotalPriceWithDiscount =>
         Math.Round(Items.Sum(item => item.PriceWithDiscount), 2, MidpointRounding.AwayFromZero);
 
-    protected Basket(Guid id, Guid? customerId, Guid? guestId, DateTime createdAt, DateTime? closedAt) : base(id)
+    protected Basket(Guid id, Guid? customerId, Guid? guestId, DateTime createdAt,
+        DateTime? closedAt, DateTime? canceledAt) : base(id)
     {
         CustomerId = customerId;
         CreatedAt = createdAt;
         ClosedAt = closedAt;
         GuestId = guestId;
+        ClosedAt = closedAt;
+        CanceledAt = canceledAt;
     }
 
     public BasketItem AddProduct(Product product, IEnumerable<IDiscountPolicy> policies, Discount? discount = null)
@@ -41,18 +48,21 @@ public class Basket : Entity
 
         return item;
     }
-    
-    public IEnumerable<Guid> RemoveItems(Product product, IEnumerable<IDiscountPolicy> policies, Discount? discount = null)
+
+    public IEnumerable<Guid> RemoveItems(Product product, Guid? appliedDiscount, IEnumerable<IDiscountPolicy> policies,
+        Discount? discount = null)
     {
         if (product == null) throw new ArgumentNullException(nameof(product), "Product cannot be null.");
 
         // Remove items without discounts matching the product ID
-        var itemsToRemove = Items.Where(i => i.ProductId == product.Id).Select(s => s.Id).ToList();;
+        var itemsToRemove = Items.Where(i => i.ProductId == product.Id &&
+                                             (appliedDiscount == null || i.DiscountId == appliedDiscount))
+                                            .Select(s => s.Id).ToList();
 
         if (!itemsToRemove.Any()) return [];
-        
+
         _items.RemoveAll(item => itemsToRemove.Contains(item.Id));
-        
+
         // Handle discount removal and reapply policies if a discount is provided
         if (discount is not null)
         {
@@ -60,7 +70,7 @@ public class Basket : Entity
             {
                 item.RemoveDiscount();
             }
-            
+
             ApplyDiscount(policies, discount);
         }
 
@@ -71,6 +81,13 @@ public class Basket : Entity
     {
         ClosedAt = DateTime.UtcNow;
     }
+    
+    public void Cancel()
+    {
+        CanceledAt = DateTime.UtcNow;
+    }
+
+
     private void ApplyDiscount(IEnumerable<IDiscountPolicy> policies, Discount discount)
     {
         if (discount == null)
@@ -79,7 +96,7 @@ public class Basket : Entity
         if (policies == null)
             throw new ArgumentNullException(nameof(policies));
 
-        
+
         foreach (var item in Items.Where(w => w.ProductId == discount.ProductId && w.Discount is null))
         {
             Discount appliedDiscount = policies
@@ -97,13 +114,13 @@ public class Basket : Entity
     {
         if (customerId == Guid.Empty) throw new ArgumentException("Customer ID cannot be empty.", nameof(customerId));
 
-        return new Basket(Guid.NewGuid(), customerId, null, DateTime.UtcNow, null);
+        return new Basket(Guid.NewGuid(), customerId, null, DateTime.UtcNow, null, null);
     }
 
     public static Basket CreateForGuess(Guid guestId)
     {
         if (guestId == Guid.Empty) throw new ArgumentException("Guest ID cannot be empty.", nameof(guestId));
-        
-        return new Basket(Guid.NewGuid(), null, guestId, DateTime.UtcNow, null);
+
+        return new Basket(Guid.NewGuid(), null, guestId, DateTime.UtcNow, null, null);
     }
 }

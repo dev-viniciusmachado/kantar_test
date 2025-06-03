@@ -10,7 +10,7 @@ public class ProductEndpoints : IEndpoint
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
         
-        var group = app.MapGroup("api/products")
+        var group = app.MapGroup("api/v1/products")
             .WithTags("products");
 
         group.MapGet("/", async (IMediator mediator) =>

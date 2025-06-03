@@ -8,7 +8,7 @@ public class DiscountEndpoints : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        var group = app.MapGroup("api/discounts")
+        var group = app.MapGroup("api/v1/discounts")
             .WithTags("discounts");
 
         group.MapGet("/", async (IMediator mediator) =>
