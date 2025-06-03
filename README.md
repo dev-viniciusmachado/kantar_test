@@ -32,21 +32,21 @@ Run Tests:
 
 
 dotnet test
-<hr></hr>
+
 <hr></hr>
 Project Structure
-ShoppingBasket.AppHost: Entry point for the application.
-ShoppingBasket.Tests.Integration: Integration tests using Testcontainers.
-ShoppingBasket.API: API for managing shopping baskets.
-ShoppingBasket.Domain: Core domain logic and models.
-ShoppingBasket.Application: Contains business logic, use cases, and service definitions. It acts as a mediator between the domain and external layers.
-ShoppingBasket.Infrastructure: Handles database access, external services, and other low-level details.
-ShoppingBasket.Presentation: layer is implemented using Angular to provide a user-friendly interface for managing shopping baskets. It interacts with the ShoppingBasket.API to perform operations such as creating, updating, and closing baskets.
+- ShoppingBasket.AppHost: Entry point for the application. 
+- ShoppingBasket.Tests.Integration: Integration tests using Testcontainers.
+- ShoppingBasket.API: API for managing shopping baskets.
+- ShoppingBasket.Domain: Core domain logic and models.
+- ShoppingBasket.Application: Contains business logic, use cases, and service definitions. It acts as a mediator between the domain and external layers.
+- ShoppingBasket.Infrastructure: Handles database access, external services, and other low-level details.
+- ShoppingBasket.Presentation: layer is implemented using Angular to provide a user-friendly interface for managing shopping baskets. It interacts with the ShoppingBasket.API to perform operations such as creating, updating, and closing baskets.
 <hr></hr>
 ShoppingBasket.Presentation Setup Instructions
 Navigate to the Presentation Folder:
 
-cd ShoppingBasket.Presentation
+cd FE/ShoppingBasket.Presentation
 Install Dependencies:
 npm install
 
@@ -54,6 +54,9 @@ Run the Application:
 npm run start
 Access the Application: Open your browser and navigate to http://localhost:4200.
 
-<hr></hr>
-License
-This project is licensed under MIT License.
+## Live Demo
+
+You can check out the live versions of both the API and the frontend application:
+
+- **API (Swagger UI):** [https://shoppingbasket-kantar.azurewebsites.net/swagger/index.html](https://shoppingbasket-kantar.azurewebsites.net/swagger/index.html)  
+- **Frontend App:** [https://dev-viniciusmachado.github.io/kantar_test/](https://dev-viniciusmachado.github.io/kantar_test/)

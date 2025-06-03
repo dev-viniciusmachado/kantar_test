@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
-  private baseUrl = 'https://shoppingbasket-kantar.azurewebsites.net/api/v1';
+  private baseUrl = 'https://localhost:7092/api/v1';
 
   constructor(private http: HttpClient) {}
 
