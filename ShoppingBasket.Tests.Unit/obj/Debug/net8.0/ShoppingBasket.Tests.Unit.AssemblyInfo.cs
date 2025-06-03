@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShoppingBasket.Tests.Unit")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+65f71f6389b50bb977ece7b9273ca25e5d9a4523")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3e0fbec89c260a14f46b4bf250d7a2bfc5c0999")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShoppingBasket.Tests.Unit")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShoppingBasket.Tests.Unit")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,12 +8,5 @@
       <jdbc-url>jdbc:mysql://localhost:59137/SBDb?user=root&amp;password=j0QCn-%21hJ%7BWD*y%29--JqGk%21</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
-    <data-source source="LOCAL" name="SBDb" uuid="63378b82-0bc9-4597-8705-a8e65e0f611f">
-      <driver-ref>mysql.8</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:64141/SBDb?user=root&amp;password=j0QCn-%21hJ%7BWD*y%29--JqGk%21</jdbc-url>
-      <working-dir>$ProjectFileDir$</working-dir>
-    </data-source>
   </component>
 </project>

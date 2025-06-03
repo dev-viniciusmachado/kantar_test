@@ -107,6 +107,32 @@ public class BasketUnitTests
         // Assert
         Assert.Equal(2.65m, basket.TotalPriceWithDiscount);
     }
+    
+    [Fact]
+    public void ShouldApplyDiscountToOneExistedBreadWhenTwoSoupsAdded()
+    {
+        // Arrange
+        var basket = Basket.Create(Guid.NewGuid());
+        var discount = Discount.CreateMultiBuyDiscount(
+            "Half Price Bread for every 2 Soups",
+            bread.Id,
+            50,
+            true,
+            1,
+            soup.Id,
+            2
+        );
+
+        // Act
+        basket.AddProduct(bread, _policies, discount);
+        basket.AddProduct(bread, _policies, discount);
+        basket.AddProduct(bread, _policies, discount);
+        basket.AddProduct(soup, _policies, discount);
+        basket.AddProduct(soup, _policies, discount);
+
+        // Assert
+        Assert.Equal(2.63m, basket.TotalPriceWithDiscount);
+    }
 
     [Fact]
     public void ShouldRemoveItemsAndRecalculateDiscounts()
